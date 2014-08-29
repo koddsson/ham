@@ -1,0 +1,17 @@
+Vefþjónustu (API). Codename HAM
+    - Devopsa (keyra coredata.version)
+    - Cache-ar í db (sqlite3) í x tíma
+        - Hægt að force-a check
+    - Geymir sögu Laika vs Nuxeo fjölda, hægt fá stöðu eftir degi/viku fyrir webapp til að sýna
+    - Geymir sögu version-a per customer
+    - Höndla líka nýja kúnna svo það sjáist
+
+    - Flask?
+
+
+Webapp
+    - Tala við apann
+    - sýnir snyrtilega stöðu (tvier tabs, Nuxeo/Laika)
+    - Hægt að force checka alla eða einn kúnna. 
+    - Syńir hve gamlar upplýsingarnar eru.
+    - Sýn sem sýnir stöplarit eftir version

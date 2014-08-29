@@ -4,15 +4,17 @@ hosts = [
     {
         "id": 1,
         "host_name": "laika0.coredata.is",
+        "backend": "laika",
         "version": "2.2.2",
-        "customer": "azazo",
+        "tenants": ["azazo", "koddsson", "kodasonur"],
         "cache_time": datetime(2014, 8, 29, 12, 05, 06)
     },
     {
         "id": 2,
         "host_name": "drkoddson.coredata.is",
+        "backend": "nuxeo",
         "version": "1.3.3.7",
-        "customer": "koddsson",
+        "tenants": None,
         "cache_time": datetime(2014, 8, 29, 12, 05, 06)
     }
 ]

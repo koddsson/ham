@@ -39,7 +39,8 @@ def get_host(host_id):
 
 @app.route('/')
 def index():
-    return "Hello, World"
+    return "<img src=\"static/ham.jpg\"></img>"
+
 
 
 @app.errorhandler(404)

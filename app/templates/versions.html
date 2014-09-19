@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/react/0.11.2/react.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/react/0.11.2/JSXTransformer.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js'></script>
+    <script type="text/jsx">
+      /** @jsx React.DOM */
+      var VersionCard = React.createClass({
+        render: function() {
+          return (<li>{this.props.host} - {this.props.version}</li>);
+        }
+      });
+      var VersionList = React.createClass({
+        getInitialState: function() {
+          return { api_host: 'http://localhost:5000', results: [] };
+        },
+        componentDidMount: function() {
+          $.getJSON(this.state.api_host + '/run/mmg.coredata.is/version', function(data) {
+            this.setState(data);
+          }.bind(this));
+        },
+        render: function() {
+          console.log(this.state);
+          var versions = _.map(this.state.results, function(version, host) {
+            return <VersionCard host={host} version={version} />;
+          });
+          return <ul>{versions}</ul>;
+        }
+      });
+      
+      React.renderComponent(<VersionList />, document.body);
+      </script>
+  </head>
+  <body></body>
+</html>

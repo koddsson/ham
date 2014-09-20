@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 env.warn_only = True
 
-package_name = 'azazofabric'
+package_name = 'scripts'
 
 
 def crossdomain(origin=None, methods=None, headers=None,
@@ -55,8 +55,9 @@ def crossdomain(origin=None, methods=None, headers=None,
 @app.route('/run/<host>/<task>', methods=['GET'])
 @crossdomain(origin='*')
 def run_command(host, task):
+    kwargs = {key: request.args.get(key) for key in request.args}
     func = getattr(__import__(package_name), task)
-    results = execute(func, hosts=[host])
+    results = execute(func, hosts=[host], **kwargs)
     return jsonify({'ok': True, 'results': results})
 
 

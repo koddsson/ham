@@ -57,3 +57,6 @@ docs/_build/
 
 # Vim
 *.swp
+
+.gitmodules
+scripts

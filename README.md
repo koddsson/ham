@@ -10,6 +10,27 @@ Add your fabric scripts as a submodule. It must be formatted like [mine](https:/
 
     git submodule add <your_scripts_repo> scripts
 
+Usage
+-----
+
+Endpoints are exposed in the following manner:
+
+    http://localhost:5000/run/<host>/<task>
+
+Query parameters map to task arguments. So if you have the following task:
+
+```python
+    from fabric.api import run, task
+
+    @task
+    def curl(url):
+        return run('curl {url}'.format(url=url))
+```
+
+The request you'd like is something like:
+
+    http://localhost:5000/run/<host>/curl?url=http://tldr.is
+
 Clients that I know of
 ----------------------
 

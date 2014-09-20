@@ -5,10 +5,13 @@ Fabric web interface and API
 
 TODO
 ----
+
+- Split up the app and api into two repos.
+
 API. Codename HAM
 
 - Run fabric scripts on demand.
-- Run fabric scripts periodically
+- Run fabric scripts periodically.
 
 Web app
 
